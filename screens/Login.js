@@ -6,22 +6,24 @@ export default class Login extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {name: ''};
+        this.state = {
+            name: 'Name'
+        };
     }
 
 
-    dispayName = (inputName) => {
-        this.setState({name: inputName});
-
-    }
+    // dispayName = (inputName) => {
+    //     this.setState({name: inputName});
+    //
+    // }
     render() {
         return (
             <View>
                 <Text>Tell me your name</Text>
                 <Button
                     title="Play"
-                    onPress={this.displayName()}
                 />
+                {this.state.name ? <Text>Ciao {this.state.name}</Text> : null}
             </View>
 
         )
